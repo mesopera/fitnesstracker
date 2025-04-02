@@ -1,0 +1,147 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  /* Main container */
+  .gender-selection-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000000;
+  }
+  
+  /* Header with back button */
+  .back-header {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #ff6b00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+  }
+  
+  .back-text {
+    font-size: 16px;
+  }
+  
+  /* Main content section */
+  .content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 40px;
+  }
+  
+  .page-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  
+  /* Gender options */
+  .gender-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .gender-option {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .gender-icon {
+    font-size: 48px;
+    width: 120px;
+    height: 120px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+  }
+  
+  .male-icon {
+    background-color: #00b4d8;
+  }
+  
+  .female-icon {
+    background-color: #ff69b4;
+  }
+  
+  .gender-label {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  /* Continue button */
+  .continue-button-container {
+    margin-top: auto;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .continue-button {
+    width: 100%;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Focus states for accessibility */
+  .back-button:focus,
+  .gender-icon:focus,
+  .continue-button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+  
+  /* Hover states */
+  .back-button:hover {
+    opacity: 0.9;
+  }
+  
+  .gender-icon:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .continue-button:hover {
+    background-color: #ff8124;
+  }

@@ -1,0 +1,530 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --transition-speed: 0.3s;
+    --hover-scale: 1.02;
+    --active-scale: 0.95;
+    --primary-color: #ff6b00;
+    --secondary-color: #ff3b7d;
+    --background-dark: #1c1c1e;
+    --card-background: #2c2c2e;
+    --card-background-hover: #3c3c3e;
+    --completed-overlay: rgba(255, 107, 0, 0.1);
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #1c1c1e;
+    color: #fff;
+  }
+  
+  /* Main container */
+  .workout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1c1c1e;
+  }
+  
+  /* Header styles */
+  .workout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1c1c1e;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .header-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .icon-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .icon-button:active {
+    transform: scale(var(--active-scale));
+  }
+  
+  .icon-button i {
+    color: #ff6b00;
+    font-size: 24px;
+  }
+  
+  /* Workout content */
+  .workout-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .workout-title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: #ff3b7d;
+    padding: 16px;
+  }
+  
+  /* Workout stats */
+  .workout-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1c1c1e;
+  }
+  
+  .stats-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .stat-text {
+    color: #fff;
+  }
+  
+  .favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .favorite-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .favorite-button:active {
+    transform: scale(var(--active-scale));
+  }
+  
+  .favorite-button i {
+    color: #fff;
+    font-size: 24px;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .favorite-button.active i {
+    color: #ff6b00;
+  }
+  
+  .favorite-button:hover i {
+    color: #ff9d4d;
+  }
+  
+  /* Workout rounds */
+  .workout-rounds {
+    padding: 16px;
+  }
+  
+  /* Overall progress bar */
+  .overall-progress-container {
+    margin-bottom: 24px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .overall-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .overall-progress-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .progress-percentage {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .progress-bar-container {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width var(--transition-speed) ease;
+  }
+  
+  .reset-progress {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed) ease;
+  }
+  
+  .reset-progress:hover {
+    background-color: rgba(255, 59, 125, 0.1);
+  }
+  
+  .round-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .round-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .round-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--primary-color);
+  }
+  
+  .round-progress-bar-container {
+    width: 60px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .round-progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width var(--transition-speed) ease;
+  }
+  
+  .round-title:hover {
+    color: #ff6b00;
+  }
+  
+  .round-title::after {
+    content: "\ea5e";
+    font-family: "tabler-icons";
+    margin-left: 8px;
+    font-size: 18px;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .round-title.collapsed::after {
+    transform: rotate(-90deg);
+  }
+  
+  .round-title:not(:first-of-type) {
+    margin-top: 16px;
+  }
+  
+  .exercises-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition:
+      opacity var(--transition-speed) ease,
+      max-height var(--transition-speed) ease;
+    overflow: hidden;
+    max-height: 1000px; /* Arbitrary large value */
+    opacity: 1;
+  }
+  
+  .exercises-list.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  /* Exercise cards */
+  .exercise-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-background);
+    padding: 16px;
+    border-radius: 12px;
+    transition:
+      transform var(--transition-speed) ease,
+      box-shadow var(--transition-speed) ease,
+      background-color var(--transition-speed) ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .exercise-card.completed {
+    background-color: var(--card-background);
+  }
+  
+  .exercise-card.completed::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--completed-overlay);
+    pointer-events: none;
+  }
+  
+  .exercise-card.completed .exercise-name {
+    text-decoration: line-through;
+    opacity: 0.8;
+  }
+  
+  .completion-checkbox {
+    min-width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+    margin-left: 12px;
+  }
+  
+  .completion-checkbox i {
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .completion-checkbox.checked {
+    background-color: var(--primary-color);
+  }
+  
+  .completion-checkbox.checked i {
+    opacity: 1;
+  }
+  .exercise-card:hover {
+    transform: scale(var(--hover-scale));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #3c3c3e;
+  }
+  
+  .exercise-card:active {
+    transform: scale(var(--active-scale));
+  }
+  
+  .exercise-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+  
+  .play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform var(--transition-speed) ease,
+      box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+  }
+  
+  .play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 107, 0, 0.5);
+  }
+  
+  .play-button:active {
+    transform: scale(var(--active-scale));
+  }
+  
+  .play-button.playing i {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .play-button.orange {
+    background-color: #ff6b00;
+  }
+  
+  .play-button.pink {
+    background-color: #ff3b7d;
+  }
+  
+  .exercise-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .exercise-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .exercise-duration {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .repetition-count {
+    color: var(--primary-color);
+    margin-right: 12px;
+  }
+  
+  .exercise-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Icons */
+  i {
+    color: #fff;
+    transition:
+      transform var(--transition-speed) ease,
+      color var(--transition-speed) ease;
+  }
+  
+  /* Progress indicator for playing exercises */
+  .progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    stroke-width: 3;
+    stroke: #fff;
+    fill: none;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1s linear;
+  }
+  
+  .play-button.playing .progress-ring {
+    animation: progress 30s linear forwards;
+  }
+  
+  @keyframes progress {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Fade in animation for page load */
+  .workout-container {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Staggered animation for exercise cards */
+  .exercise-card {
+    animation: slideIn 0.5s ease-out backwards;
+  }
+  
+  .exercises-list:nth-of-type(1) .exercise-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .exercises-list:nth-of-type(1) .exercise-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .exercises-list:nth-of-type(1) .exercise-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .exercises-list:nth-of-type(2) .exercise-card:nth-child(1) {
+    animation-delay: 0.4s;
+  }
+  .exercises-list:nth-of-type(2) .exercise-card:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

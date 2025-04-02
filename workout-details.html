@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Details - Cardio Boxing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="workout-details.css" />
+  </head>
+  <body>
+    <div class="workout-container">
+      <header class="workout-header">
+        <div class="header-left">
+          <a href="workout.html" style="text-decoration: none;">"<i class="ti ti-chevron-left"></i></a>
+          <h1 class="header-title">Workout</h1>
+        </div>
+        <div class="header-actions">
+          <button class="icon-button"><i class="ti ti-search"></i></button>
+          <button class="icon-button"><i class="ti ti-bell"></i></button>
+          <button class="icon-button"><i class="ti ti-user"></i></button>
+        </div>
+      </header>
+      <main class="workout-content">
+        <h2 class="workout-title">Cardio Boxing</h2>
+        <section class="workout-stats">
+          <div class="stats-container">
+            <div class="stat-item">
+              <i class="ti ti-clock"></i>
+              <span class="stat-text">60 Minutes</span>
+            </div>
+            <div class="stat-item">
+              <i class="ti ti-flame"></i>
+              <span class="stat-text">1450 Kcal</span>
+            </div>
+            <div class="stat-item">
+              <i class="ti ti-run"></i>
+              <span class="stat-text">Advanced</span>
+            </div>
+          </div>
+          <button class="favorite-button">
+            <i class="ti ti-star"></i>
+          </button>
+        </section>
+        <section class="workout-rounds">
+          <div class="overall-progress-container">
+            <div class="overall-progress-header">
+              <h3 class="overall-progress-title">Workout Progress</h3>
+              <span class="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 0%"></div>
+            </div>
+            <button class="reset-progress">Reset Progress</button>
+          </div>
+
+          <div class="round-header">
+            <h3 class="round-title">Round 1</h3>
+            <div class="round-progress">
+              <span class="round-progress-text">0/3</span>
+              <div class="round-progress-bar-container">
+                <div class="round-progress-bar" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="exercises-list">
+            <article class="exercise-card" data-exercise-id="ex1">
+              <div class="exercise-info">
+                <div class="play-button orange">
+                  <i class="ti ti-player-play"></i>
+                </div>
+                <div class="exercise-details">
+                  <h4 class="exercise-name">Barbell Bench Press</h4>
+                  <span class="exercise-duration">00:30</span>
+                </div>
+              </div>
+              <div class="exercise-actions">
+                <span class="repetition-count">Repetition 3x</span>
+                <div class="completion-checkbox">
+                  <i class="ti ti-check"></i>
+                </div>
+              </div>
+            </article>
+            <article class="exercise-card" data-exercise-id="ex2">
+              <div class="exercise-info">
+                <div class="play-button orange">
+                  <i class="ti ti-player-play"></i>
+                </div>
+                <div class="exercise-details">
+                  <h4 class="exercise-name">Tricep Dips</h4>
+                  <span class="exercise-duration">00:15</span>
+                </div>
+              </div>
+              <div class="exercise-actions">
+                <span class="repetition-count">Repetition 2x</span>
+                <div class="completion-checkbox">
+                  <i class="ti ti-check"></i>
+                </div>
+              </div>
+            </article>
+            <article class="exercise-card" data-exercise-id="ex3">
+              <div class="exercise-info">
+                <div class="play-button pink">
+                  <i class="ti ti-player-play"></i>
+                </div>
+                <div class="exercise-details">
+                  <h4 class="exercise-name">Incline Bench Sit Up</h4>
+                  <span class="exercise-duration">00:30</span>
+                </div>
+              </div>
+              <div class="exercise-actions">
+                <span class="repetition-count">Repetition 3x</span>
+                <div class="completion-checkbox">
+                  <i class="ti ti-check"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round-header">
+            <h3 class="round-title">Round 2</h3>
+            <div class="round-progress">
+              <span class="round-progress-text">0/2</span>
+              <div class="round-progress-bar-container">
+                <div class="round-progress-bar" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="exercises-list">
+            <article class="exercise-card" data-exercise-id="ex4">
+              <div class="exercise-info">
+                <div class="play-button orange">
+                  <i class="ti ti-player-play"></i>
+                </div>
+                <div class="exercise-details">
+                  <h4 class="exercise-name">Romanian Deadlifts</h4>
+                  <span class="exercise-duration">00:10</span>
+                </div>
+              </div>
+              <div class="exercise-actions">
+                <span class="repetition-count">Repetition 2x</span>
+                <div class="completion-checkbox">
+                  <i class="ti ti-check"></i>
+                </div>
+              </div>
+            </article>
+            <article class="exercise-card" data-exercise-id="ex5">
+              <div class="exercise-info">
+                <div class="play-button orange">
+                  <i class="ti ti-player-play"></i>
+                </div>
+                <div class="exercise-details">
+                  <h4 class="exercise-name">Foam Rolling</h4>
+                  <span class="exercise-duration">00:10</span>
+                </div>
+              </div>
+              <div class="exercise-actions">
+                <span class="repetition-count">Repetition 4x</span>
+                <div class="completion-checkbox">
+                  <i class="ti ti-check"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Workout data structure
+        const workoutData = {
+          title: "Cardio Boxing",
+          rounds: [
+            {
+              title: "Round 1",
+              exercises: [
+                {
+                  id: "ex1",
+                  name: "Barbell Bench Press",
+                  duration: "00:30",
+                  repetitions: "3x",
+                  completed: false,
+                },
+                {
+                  id: "ex2",
+                  name: "Tricep Dips",
+                  duration: "00:15",
+                  repetitions: "2x",
+                  completed: false,
+                },
+                {
+                  id: "ex3",
+                  name: "Incline Bench Sit Up",
+                  duration: "00:30",
+                  repetitions: "3x",
+                  completed: false,
+                },
+              ],
+            },
+            {
+              title: "Round 2",
+              exercises: [
+                {
+                  id: "ex4",
+                  name: "Romanian Deadlifts",
+                  duration: "00:10",
+                  repetitions: "2x",
+                  completed: false,
+                },
+                {
+                  id: "ex5",
+                  name: "Foam Rolling",
+                  duration: "00:10",
+                  repetitions: "4x",
+                  completed: false,
+                },
+              ],
+            },
+          ],
+        };
+
+        // Local storage key
+        const STORAGE_KEY = "cardio_boxing_progress";
+
+        // Load saved progress from localStorage
+        function loadProgress() {
+          const savedProgress = localStorage.getItem(STORAGE_KEY);
+          if (savedProgress) {
+            const completedExercises = JSON.parse(savedProgress);
+
+            // Update workout data with saved progress
+            workoutData.rounds.forEach((round) => {
+              round.exercises.forEach((exercise) => {
+                if (completedExercises.includes(exercise.id)) {
+                  exercise.completed = true;
+                }
+              });
+            });
+
+            // Update UI to reflect saved progress
+            updateCompletionUI();
+          }
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+          const completedExercises = [];
+
+          workoutData.rounds.forEach((round) => {
+            round.exercises.forEach((exercise) => {
+              if (exercise.completed) {
+                completedExercises.push(exercise.id);
+              }
+            });
+          });
+
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(completedExercises));
+        }
+
+        // Update UI based on completion status
+        function updateCompletionUI() {
+          // Update exercise cards
+          workoutData.rounds.forEach((round, roundIndex) => {
+            round.exercises.forEach((exercise) => {
+              const card = document.querySelector(
+                `[data-exercise-id="${exercise.id}"]`,
+              );
+              const checkbox = card.querySelector(".completion-checkbox");
+
+              if (exercise.completed) {
+                card.classList.add("completed");
+                checkbox.classList.add("checked");
+              } else {
+                card.classList.remove("completed");
+                checkbox.classList.remove("checked");
+              }
+            });
+
+            // Update round progress
+            const completedInRound = round.exercises.filter(
+              (ex) => ex.completed,
+            ).length;
+            const totalInRound = round.exercises.length;
+            const roundProgressText = document.querySelectorAll(
+              ".round-progress-text",
+            )[roundIndex];
+            const roundProgressBar = document.querySelectorAll(
+              ".round-progress-bar",
+            )[roundIndex];
+
+            roundProgressText.textContent = `${completedInRound}/${totalInRound}`;
+            const roundPercentage =
+              totalInRound > 0 ? (completedInRound / totalInRound) * 100 : 0;
+            roundProgressBar.style.width = `${roundPercentage}%`;
+          });
+
+          // Update overall progress
+          const totalExercises = workoutData.rounds.reduce(
+            (total, round) => total + round.exercises.length,
+            0,
+          );
+          const completedExercises = workoutData.rounds.reduce(
+            (total, round) => {
+              return (
+                total + round.exercises.filter((ex) => ex.completed).length
+              );
+            },
+            0,
+          );
+
+          const overallPercentage =
+            totalExercises > 0
+              ? (completedExercises / totalExercises) * 100
+              : 0;
+          const formattedPercentage = Math.round(overallPercentage);
+
+          document.querySelector(".progress-percentage").textContent =
+            `${formattedPercentage}%`;
+          document.querySelector(".progress-bar").style.width =
+            `${overallPercentage}%`;
+        }
+
+        // Toggle exercise completion
+        function toggleExerciseCompletion(exerciseId) {
+          let exerciseFound = false;
+
+          // Find and toggle the exercise completion status
+          workoutData.rounds.forEach((round) => {
+            round.exercises.forEach((exercise) => {
+              if (exercise.id === exerciseId) {
+                exercise.completed = !exercise.completed;
+                exerciseFound = true;
+              }
+            });
+          });
+
+          if (exerciseFound) {
+            // Update UI and save to localStorage
+            updateCompletionUI();
+            saveProgress();
+          }
+        }
+
+        // Reset all progress
+        function resetProgress() {
+          // Reset data
+          workoutData.rounds.forEach((round) => {
+            round.exercises.forEach((exercise) => {
+              exercise.completed = false;
+            });
+          });
+
+          // Clear localStorage
+          localStorage.removeItem(STORAGE_KEY);
+
+          // Update UI
+          updateCompletionUI();
+        }
+
+        // Event Listeners
+
+        // Completion checkbox click
+        const checkboxes = document.querySelectorAll(".completion-checkbox");
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent card click
+
+            const exerciseCard = this.closest(".exercise-card");
+            const exerciseId = exerciseCard.dataset.exerciseId;
+
+            toggleExerciseCompletion(exerciseId);
+          });
+        });
+
+        // Exercise card click for completion toggle
+        const exerciseCards = document.querySelectorAll(".exercise-card");
+        exerciseCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            const exerciseId = this.dataset.exerciseId;
+            toggleExerciseCompletion(exerciseId);
+
+            // Visual feedback
+            this.style.backgroundColor = "#4c4c4e";
+            setTimeout(() => {
+              this.style.backgroundColor = "";
+            }, 300);
+          });
+        });
+
+        // Reset progress button
+        const resetButton = document.querySelector(".reset-progress");
+        resetButton.addEventListener("click", function () {
+          if (confirm("Are you sure you want to reset all progress?")) {
+            resetProgress();
+          }
+        });
+
+        // Favorite button toggle
+        const favoriteButton = document.querySelector(".favorite-button");
+        favoriteButton.addEventListener("click", function (e) {
+          e.stopPropagation(); // Prevent bubbling
+          this.classList.toggle("active");
+
+          // Add visual feedback
+          const icon = this.querySelector("i");
+          icon.classList.add("ti-star-filled");
+
+          setTimeout(() => {
+            if (!this.classList.contains("active")) {
+              icon.classList.remove("ti-star-filled");
+            }
+          }, 300);
+        });
+
+        // Round title collapse/expand functionality
+        const roundTitles = document.querySelectorAll(".round-title");
+        roundTitles.forEach((title) => {
+          title.addEventListener("click", function () {
+            const header = this.closest(".round-header");
+            const exercisesList = header.nextElementSibling;
+
+            this.classList.toggle("collapsed");
+            exercisesList.classList.toggle("collapsed");
+          });
+        });
+
+        // Play button interaction
+        const playButtons = document.querySelectorAll(".play-button");
+        playButtons.forEach((button) => {
+          // Add SVG circle for progress indicator
+          const svg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          svg.setAttribute("viewBox", "0 0 100 100");
+          svg.style.position = "absolute";
+          svg.style.width = "100%";
+          svg.style.height = "100%";
+
+          const circle = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "circle",
+          );
+          circle.setAttribute("cx", "50");
+          circle.setAttribute("cy", "50");
+          circle.setAttribute("r", "45");
+          circle.classList.add("progress-ring");
+
+          svg.appendChild(circle);
+          button.style.position = "relative";
+          button.appendChild(svg);
+
+          button.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent triggering exercise card click
+
+            // Toggle playing state
+            const isPlaying = this.classList.toggle("playing");
+            const icon = this.querySelector("i");
+
+            if (isPlaying) {
+              icon.classList.remove("ti-player-play");
+              icon.classList.add("ti-player-pause");
+
+              // Reset animation
+              const circle = this.querySelector(".progress-ring");
+              circle.style.animation = "none";
+              setTimeout(() => {
+                circle.style.animation = "";
+              }, 10);
+
+              // Get duration from the exercise
+              const durationEl =
+                this.closest(".exercise-info").querySelector(
+                  ".exercise-duration",
+                );
+              const durationText = durationEl.textContent;
+              const [minutes, seconds] = durationText.split(":").map(Number);
+              const totalSeconds = minutes * 60 + seconds;
+
+              // Update animation duration
+              document.documentElement.style.setProperty(
+                "--progress-duration",
+                `${totalSeconds}s`,
+              );
+
+              // Auto-stop after duration
+              setTimeout(() => {
+                if (this.classList.contains("playing")) {
+                  this.classList.remove("playing");
+                  icon.classList.remove("ti-player-pause");
+                  icon.classList.add("ti-player-play");
+
+                  // Auto-mark as completed when exercise finishes
+                  const exerciseCard = this.closest(".exercise-card");
+                  const exerciseId = exerciseCard.dataset.exerciseId;
+
+                  // Find exercise and mark as completed if not already
+                  workoutData.rounds.forEach((round) => {
+                    round.exercises.forEach((exercise) => {
+                      if (exercise.id === exerciseId && !exercise.completed) {
+                        exercise.completed = true;
+                        updateCompletionUI();
+                        saveProgress();
+                      }
+                    });
+                  });
+                }
+              }, totalSeconds * 1000);
+            } else {
+              icon.classList.remove("ti-player-pause");
+              icon.classList.add("ti-player-play");
+            }
+          });
+        });
+
+        // Initialize progress tracking
+        loadProgress();
+      });
+    </script>
+  </body>
+</html>

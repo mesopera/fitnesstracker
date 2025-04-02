@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Height Selector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #000000;
+        min-height: 100vh;
+        font-family: "Inter", sans-serif;
+        padding: 16px;
+        color: #ffffff;
+      }
+
+      .back-section {
+        padding: 8px 0;
+      }
+
+      .back-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #ff6b00;
+        font-size: 16px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-family: inherit;
+      }
+
+      .back-button:focus {
+        outline: 2px solid #ff6b00;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      .back-icon {
+        font-size: 20px;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .main-heading {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      @media (max-width: 991px) {
+        .main-heading {
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .main-heading {
+          font-size: 24px;
+        }
+      }
+
+      .height-display {
+        font-size: 64px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        transition: transform 0.2s ease;
+      }
+
+      .height-display.updating {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 991px) {
+        .height-display {
+          font-size: 56px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .height-display {
+          font-size: 48px;
+        }
+      }
+
+      .unit {
+        font-size: 32px;
+        margin-left: 8px;
+        color: #666;
+      }
+
+      @media (max-width: 991px) {
+        .unit {
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .unit {
+          font-size: 24px;
+        }
+      }
+
+      .slider-container {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+      }
+
+      @media (max-width: 640px) {
+        .slider-container {
+          gap: 16px;
+        }
+      }
+
+      .height-markers {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 200px;
+        font-size: 18px;
+        color: #666;
+      }
+
+      @media (max-width: 640px) {
+        .height-markers {
+          font-size: 16px;
+        }
+      }
+
+      .marker {
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .slider-track {
+        width: 40px;
+        height: 200px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .slider-track:focus {
+        outline: 2px solid #ff6b00;
+        outline-offset: 4px;
+        border-radius: 20px;
+      }
+
+      .slider-bar {
+        width: 100%;
+        height: 100%;
+        background-color: #e91e63;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .slider-indicator {
+        width: 40px;
+        height: 4px;
+        background-color: #ffffff;
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: top 0.15s ease-out;
+      }
+
+      .slider-handle {
+        position: absolute;
+        right: -8px;
+        width: 24px;
+        height: 24px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        cursor: grab;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+      }
+
+      .slider-handle:active,
+      .slider-handle.dragging {
+        cursor: grabbing;
+        transform: translate(50%, -50%) scale(1.1);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+      }
+
+      .continue-button {
+        background-color: #ff6b00;
+        color: #ffffff;
+        padding: 16px 32px;
+        border-radius: 32px;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 40px;
+        cursor: pointer;
+        width: 100%;
+        max-width: 400px;
+        border: none;
+        font-family: inherit;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .continue-button:hover {
+        background-color: #ff8124;
+      }
+
+      .continue-button:active {
+        transform: scale(0.98);
+      }
+
+      .continue-button:focus {
+        outline: 2px solid #ff6b00;
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 640px) {
+        .continue-button {
+          padding: 14px 28px;
+          font-size: 16px;
+        }
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="back-section">
+      <a href="weight-selector.html" style="text-decoration: none;">
+      <button class="back-button" aria-label="Go back">
+        <i class="ti ti-chevron-left back-icon"></i>
+        <span>Back</span>
+      </button>
+    </a>
+    </header>
+
+    <main class="main-content">
+      <h1 class="main-heading">What Is Your Height?</h1>
+
+      <p class="height-display" aria-live="polite">
+        <span id="height-value">165</span>
+        <span class="unit">cm</span>
+      </p>
+
+      <section class="slider-container" aria-label="Height selector">
+        <div class="height-markers">
+          <div class="marker">200</div>
+          <div class="marker">180</div>
+          <div class="marker">160</div>
+          <div class="marker">140</div>
+          <div class="marker">120</div>
+        </div>
+
+        <div
+          id="slider"
+          class="slider-track"
+          role="slider"
+          aria-valuemin="120"
+          aria-valuemax="200"
+          aria-valuenow="160"
+          aria-valuetext="160 centimeters"
+          tabindex="0"
+          aria-label="Height slider"
+        >
+          <div class="slider-bar">
+            <div class="slider-indicator"></div>
+            <div class="slider-handle"></div>
+          </div>
+          <div class="sr-only" id="slider-instructions">
+            Use up and down arrow keys to adjust the height value
+          </div>
+        </div>
+      </section>
+      <a href="fitness-dashboard.html" style="text-decoration: none;">
+      <button class="continue-button">Continue</button>
+      </a>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Elements
+        const slider = document.getElementById("slider");
+        const sliderBar = slider.querySelector(".slider-bar");
+        const sliderIndicator = slider.querySelector(".slider-indicator");
+        const sliderHandle = slider.querySelector(".slider-handle");
+        const heightValue = document.getElementById("height-value");
+        const heightDisplay = document.querySelector(".height-display");
+
+        // Constants
+        const MIN_HEIGHT = 120;
+        const MAX_HEIGHT = 200;
+        const STEP = 1;
+        const SLIDER_HEIGHT = 200; // Height of the slider in pixels
+
+        // State
+        let isDragging = false;
+        let currentHeight = 165;
+        let startY = 0;
+        let startHeight = 0;
+
+        // Initialize slider position
+        updateSliderPosition(currentHeight);
+
+        // Helper functions
+        function updateSliderPosition(height) {
+          // Calculate percentage position (inverted since lower on slider = higher value)
+          const range = MAX_HEIGHT - MIN_HEIGHT;
+          const percentage = (MAX_HEIGHT - height) / range;
+          const position = percentage * SLIDER_HEIGHT;
+
+          // Update slider indicator and handle position
+          sliderIndicator.style.top = `${position}px`;
+          sliderHandle.style.top = `${position}px`;
+
+          // Update ARIA attributes
+          slider.setAttribute("aria-valuenow", height);
+          slider.setAttribute("aria-valuetext", `${height} centimeters`);
+
+          // Update displayed value
+          heightValue.textContent = height;
+        }
+
+        function calculateHeightFromPosition(posY) {
+          // Get slider dimensions and position
+          const sliderRect = sliderBar.getBoundingClientRect();
+
+          // Calculate relative position within slider (clamped to slider bounds)
+          let relativeY = Math.max(
+            0,
+            Math.min(SLIDER_HEIGHT, posY - sliderRect.top),
+          );
+
+          // Convert to height value (inverted: top = max, bottom = min)
+          const percentage = relativeY / SLIDER_HEIGHT;
+          let height = MAX_HEIGHT - percentage * (MAX_HEIGHT - MIN_HEIGHT);
+
+          // Round to nearest step
+          height = Math.round(height / STEP) * STEP;
+
+          return height;
+        }
+
+        function updateHeight(height) {
+          // Only update if value has changed
+          if (height !== currentHeight) {
+            currentHeight = height;
+            updateSliderPosition(height);
+
+            // Visual feedback
+            heightDisplay.classList.add("updating");
+            setTimeout(() => {
+              heightDisplay.classList.remove("updating");
+            }, 200);
+
+            // Haptic feedback (vibration) if supported
+            if (navigator.vibrate) {
+              navigator.vibrate(10);
+            }
+          }
+        }
+
+        // Mouse events
+        sliderBar.addEventListener("mousedown", function (e) {
+          isDragging = true;
+          sliderHandle.classList.add("dragging");
+          startY = e.clientY;
+          startHeight = currentHeight;
+
+          // Calculate and update height directly on click
+          const newHeight = calculateHeightFromPosition(e.clientY);
+          updateHeight(newHeight);
+
+          // Prevent text selection during drag
+          e.preventDefault();
+        });
+
+        document.addEventListener("mousemove", function (e) {
+          if (!isDragging) return;
+
+          const newHeight = calculateHeightFromPosition(e.clientY);
+          updateHeight(newHeight);
+        });
+
+        document.addEventListener("mouseup", function () {
+          if (isDragging) {
+            isDragging = false;
+            sliderHandle.classList.remove("dragging");
+          }
+        });
+
+        // Touch events
+        sliderBar.addEventListener("touchstart", function (e) {
+          isDragging = true;
+          sliderHandle.classList.add("dragging");
+          startY = e.touches[0].clientY;
+          startHeight = currentHeight;
+
+          // Calculate and update height directly on touch
+          const newHeight = calculateHeightFromPosition(e.touches[0].clientY);
+          updateHeight(newHeight);
+        });
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (!isDragging) return;
+
+            const newHeight = calculateHeightFromPosition(e.touches[0].clientY);
+            updateHeight(newHeight);
+
+            // Prevent scrolling while dragging
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener("touchend", function () {
+          if (isDragging) {
+            isDragging = false;
+            sliderHandle.classList.remove("dragging");
+          }
+        });
+
+        // Keyboard accessibility
+        slider.addEventListener("keydown", function (e) {
+          let newHeight = currentHeight;
+
+          switch (e.key) {
+            case "ArrowUp":
+              newHeight = Math.min(MAX_HEIGHT, currentHeight + STEP);
+              e.preventDefault();
+              break;
+            case "ArrowDown":
+              newHeight = Math.max(MIN_HEIGHT, currentHeight - STEP);
+              e.preventDefault();
+              break;
+            case "Home":
+              newHeight = MAX_HEIGHT;
+              e.preventDefault();
+              break;
+            case "End":
+              newHeight = MIN_HEIGHT;
+              e.preventDefault();
+              break;
+            case "PageUp":
+              newHeight = Math.min(MAX_HEIGHT, currentHeight + 5);
+              e.preventDefault();
+              break;
+            case "PageDown":
+              newHeight = Math.max(MIN_HEIGHT, currentHeight - 5);
+              e.preventDefault();
+              break;
+          }
+
+          if (newHeight !== currentHeight) {
+            updateHeight(newHeight);
+          }
+        });
+
+        // Announce instructions when slider receives focus
+        slider.addEventListener("focus", function () {
+          const instructions = document.getElementById("slider-instructions");
+          const announcement = new SpeechSynthesisUtterance(
+            instructions.textContent,
+          );
+          window.speechSynthesis.speak(announcement);
+        });
+
+        // Back button functionality
+        const backButton = document.querySelector(".back-button");
+        backButton.addEventListener("click", function () {
+          // In a real app, this would navigate back
+          alert("Going back to previous screen");
+        });
+
+        // Continue button functionality
+        const continueButton = document.querySelector(".continue-button");
+        continueButton.addEventListener("click", function () {
+          // In a real app, this would save the height and proceed
+          alert(`Height saved: ${currentHeight} cm`);
+        });
+      });
+    </script>
+  </body>
+</html>

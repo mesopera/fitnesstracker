@@ -1,0 +1,191 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+
+  .age-selection-container-head {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000000;
+  }
+
+  /* Main container */
+  .age-selector-container {
+    background-color: #000000;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* Back button */
+  .back-header {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #ff6b00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+  }
+  
+  .back-text {
+    font-size: 16px;
+  }
+  
+  /* Content container */
+  .age-selection-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  /* Question heading */
+  .age-question {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  @media (max-width: 640px) {
+    .age-question {
+      font-size: 28px;
+    }
+  }
+  
+  /* Selected age display */
+  .selected-age {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  
+  .selected-age.animate {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+  .selected-age.animate-back {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  @media (max-width: 640px) {
+    .selected-age {
+      font-size: 60px;
+    }
+  }
+  
+  /* Age slider container */
+  .age-slider-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  
+  /* Slider indicator (triangle) */
+  .slider-indicator {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ff6b00;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    z-index: 2;
+  }
+  
+  /* Age slider */
+  .age-slider {
+    background-color: #e91e63;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    position: relative;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-snap-type: x mandatory;
+  }
+  
+  /* Hide scrollbar */
+  .age-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Age option */
+  .age-option {
+    color: #ffffff;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: center;
+    min-width: 20%;
+    flex: 0 0 20%;
+    scroll-snap-align: center;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      font-weight 0.2s ease;
+    position: relative;
+  }
+  
+  .age-option.selected {
+    opacity: 1;
+    transform: scale(1.2);
+    font-weight: 600;
+    z-index: 1;
+  }
+  
+  .age-option:not(.selected) {
+    transform: scale(1);
+  }
+  
+  @media (max-width: 640px) {
+    .age-option {
+      font-size: 20px;
+    }
+  }
+  
+  /* Continue button */
+  .continue-button {
+    background-color: #ff6b00;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    font-family: "Inter", sans-serif;
+  }
+  
