@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Selector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="age-selector.css" />
+  </head>
+  <body>
+    <div class="age-selection-container-head">
+    <header class="back-header">
+        <a href="index.html" style="text-decoration: none;">
+        <button class="back-button">
+            <i class="ti ti-chevron-left"></i>
+            <span class="back-text">Back</span>
+        </button>
+        </a>
+    </header>
+    <main class="age-selector-container">
+      <section class="age-selection-content">
+        <h1 class="age-question">How Old Are You?</h1>
+        <p class="selected-age">28</p>
+        <div class="age-slider-container">
+          <div class="slider-indicator"></div>
+          <div class="age-slider">
+            <!-- The age options will be dynamically populated by JavaScript -->
+          </div>
+        </div>
+        <a href="weight-selector.html" style="text-decoration: none;">
+        <button class="continue-button">Continue</button>
+        </a>
+      </section>
+    </main>
+    </div>
+    <script src="age-selector.js"></script>
+  </body>
+</html>

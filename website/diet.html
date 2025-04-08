@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diet Tracking App</title>
+    <link rel="stylesheet" href="diet.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <main class="app-container">
+      <header class="app-header">
+        <div class="header-left">
+          <a href="fitness-dashboard.html" style="text-decoration: none;"><i class="ti ti-chevron-left accent-icon"></i></a>
+          <h1 class="header-title">Diet</h1>
+        </div>
+        <div class="header-actions">
+          <i class="ti ti-search accent-icon"></i>
+          <i class="ti ti-bell accent-icon"></i>
+          <i class="ti ti-user accent-icon"></i>
+        </div>
+      </header>
+
+      <section class="content-section">
+        <div class="meal-tabs">
+          <button class="meal-tab active">Breakfast</button>
+          <button class="meal-tab">Lunch</button>
+          <button class="meal-tab">Dinner</button>
+        </div>
+
+        <div class="meal-list">
+          <article class="meal-card">
+            <div class="meal-info">
+              <h2 class="meal-title">Delights With Greek Yogurt</h2>
+              <div class="meal-details">
+                <div class="detail-item">
+                  <i class="ti ti-clock detail-icon"></i>
+                  <span class="detail-text">6 Minutes</span>
+                </div>
+                <div class="detail-item">
+                  <i class="ti ti-flame detail-icon"></i>
+                  <span class="detail-text">200 Cal</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="https://placehold.co/300x200/FF1F6B/FF1F6B"
+              alt="Greek Yogurt"
+              class="meal-image"
+            />
+            <div class="favorite-button">
+              <i class="ti ti-star favorite-icon"></i>
+            </div>
+          </article>
+
+          <article class="meal-card">
+            <div class="meal-info">
+              <h2 class="meal-title">Spinach And Tomato Omelette</h2>
+              <div class="meal-details">
+                <div class="detail-item">
+                  <i class="ti ti-clock detail-icon"></i>
+                  <span class="detail-text">10 Minutes</span>
+                </div>
+                <div class="detail-item">
+                  <i class="ti ti-flame detail-icon"></i>
+                  <span class="detail-text">220 Cal</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="https://placehold.co/300x200/FF1F6B/FF1F6B"
+              alt="Omelette"
+              class="meal-image"
+            />
+            <div class="favorite-button">
+              <i class="ti ti-star favorite-icon"></i>
+            </div>
+          </article>
+
+          <article class="meal-card">
+            <div class="meal-info">
+              <h2 class="meal-title">Avocado And Egg Toast</h2>
+              <div class="meal-details">
+                <div class="detail-item">
+                  <i class="ti ti-clock detail-icon"></i>
+                  <span class="detail-text">15 Minutes</span>
+                </div>
+                <div class="detail-item">
+                  <i class="ti ti-flame detail-icon"></i>
+                  <span class="detail-text">150 Cal</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="https://placehold.co/300x200/FF1F6B/FF1F6B"
+              alt="Avocado Toast"
+              class="meal-image"
+            />
+            <div class="favorite-button">
+              <i class="ti ti-star favorite-icon"></i>
+            </div>
+          </article>
+
+          <article class="meal-card">
+            <div class="meal-info">
+              <h2 class="meal-title">Protein Shake With Fruits</h2>
+              <div class="meal-details">
+                <div class="detail-item">
+                  <i class="ti ti-clock detail-icon"></i>
+                  <span class="detail-text">9 Minutes</span>
+                </div>
+                <div class="detail-item">
+                  <i class="ti ti-flame detail-icon"></i>
+                  <span class="detail-text">180 Cal</span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="https://placehold.co/300x200/FF1F6B/FF1F6B"
+              alt="Protein Shake"
+              class="meal-image"
+            />
+            <div class="favorite-button">
+              <i class="ti ti-star favorite-icon"></i>
+            </div>
+          </article>
+        </div>
+
+        <button class="add-button">Add +</button>
+      </section>
+
+      <nav class="bottom-nav">
+        <div class="nav-icons">
+          <i class="ti ti-home nav-icon active"></i>
+          <i class="ti ti-barbell nav-icon"></i>
+          <i class="ti ti-clock nav-icon"></i>
+          <i class="ti ti-clipboard-check nav-icon"></i>
+        </div>
+      </nav>
+    </main>
+
+    <!-- Add Meal Modal -->
+    <div class="add-meal-modal">
+      <div class="modal-content">
+        <button class="close-modal"><i class="ti ti-x"></i></button>
+        <h2 class="modal-title">Add New Meal</h2>
+
+        <form class="add-meal-form">
+          <div class="form-group">
+            <label for="meal-title">Meal Title</label>
+            <input
+              type="text"
+              id="meal-title"
+              required
+              placeholder="Enter meal title"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="prep-time">Preparation Time (minutes)</label>
+            <input
+              type="number"
+              id="prep-time"
+              required
+              min="1"
+              placeholder="Enter preparation time"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="calories">Calories</label>
+            <input
+              type="number"
+              id="calories"
+              required
+              min="1"
+              placeholder="Enter calories"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="image-url">Image URL (optional)</label>
+            <input type="url" id="image-url" placeholder="Enter image URL" />
+          </div>
+
+          <button type="submit" class="submit-button">Add Meal</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="diet.js"></script>
+  </body>
+</html>

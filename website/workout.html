@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="workout.css" />
+    <script src="workout.js" defer></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div class="header-left">
+          <a href="fitness-dashboard.html" style="text-decoration: none;">
+            <i class="ti ti-chevron-left nav-icon"></i>
+          </a>
+          <h1 class="header-title">Workout</h1>
+        </div>
+        <div class="header-right">
+          <i class="ti ti-search action-icon"></i>
+          <i class="ti ti-bell action-icon"></i>
+          <i class="ti ti-user action-icon"></i>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <div class="filter-controls">
+          <div class="filter-label">Filter by:</div>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="cardio">Cardio</button>
+          <button class="filter-btn" data-filter="hypertrophy">
+            Hypertrophy
+          </button>
+        </div>
+        <div class="workout-list">
+          <article
+            class="workout-card purple"
+            data-type="cardio"
+            data-duration="50"
+            data-calories="1300"
+          >
+            <div class="workout-details">
+                <a href="workout-details.html" style="text-decoration: none;">
+                    <h2 class="workout-title">Cardio Boxing</h2>
+                </a>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <i class="ti ti-heart"></i>
+              </button>
+              <div class="workout-stats">
+                <div class="stat-item">
+                  <i class="ti ti-clock"></i>
+                  <span>50 Minutes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-flame"></i>
+                  <span>1300 Kcal</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-activity"></i>
+                  <span>5 Exercises</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="workout-card blue"
+            data-type="hypertrophy"
+            data-duration="12"
+            data-calories="1250"
+          >
+            <div class="workout-details">
+              <h2 class="workout-title">Hypertrophy - Legs</h2>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <i class="ti ti-heart"></i>
+              </button>
+              <div class="workout-stats">
+                <div class="stat-item">
+                  <i class="ti ti-clock"></i>
+                  <span>12 Minutes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-flame"></i>
+                  <span>1250 Kcal</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-activity"></i>
+                  <span>5 Exercises</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="workout-card purple"
+            data-type="cardio"
+            data-duration="50"
+            data-calories="1300"
+          >
+            <div class="workout-details">
+              <h2 class="workout-title">Cardio Boxing</h2>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <i class="ti ti-heart"></i>
+              </button>
+              <div class="workout-stats">
+                <div class="stat-item">
+                  <i class="ti ti-clock"></i>
+                  <span>50 Minutes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-flame"></i>
+                  <span>1300 Kcal</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-activity"></i>
+                  <span>5 Exercises</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="workout-card blue"
+            data-type="hypertrophy"
+            data-duration="12"
+            data-calories="1250"
+          >
+            <div class="workout-details">
+              <h2 class="workout-title">Hypertrophy - Legs</h2>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <i class="ti ti-heart"></i>
+              </button>
+              <div class="workout-stats">
+                <div class="stat-item">
+                  <i class="ti ti-clock"></i>
+                  <span>12 Minutes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-flame"></i>
+                  <span>1250 Kcal</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-activity"></i>
+                  <span>5 Exercises</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="workout-card purple"
+            data-type="hypertrophy"
+            data-duration="12"
+            data-calories="1250"
+          >
+            <div class="workout-details">
+              <h2 class="workout-title">Hypertrophy - Legs</h2>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <i class="ti ti-heart"></i>
+              </button>
+              <div class="workout-stats">
+                <div class="stat-item">
+                  <i class="ti ti-clock"></i>
+                  <span>12 Minutes</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-flame"></i>
+                  <span>1250 Kcal</span>
+                </div>
+                <div class="stat-item">
+                  <i class="ti ti-activity"></i>
+                  <span>5 Exercises</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <i class="ti ti-home footer-icon"></i>
+        <i class="ti ti-barbell footer-icon"></i>
+        <i class="ti ti-apple footer-icon"></i>
+        <i class="ti ti-clipboard-list footer-icon"></i>
+      </footer>
+    </div>
+
+    <!-- Workout Detail Modal -->
+    <div class="modal" id="workout-modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">
+          <i class="ti ti-x"></i>
+        </button>
+        <h2 class="modal-title">Workout Details</h2>
+        <div class="modal-body">
+          <div class="modal-info">
+            <h3 id="modal-workout-title"></h3>
+            <div class="modal-stats">
+              <div class="modal-stat">
+                <i class="ti ti-clock"></i>
+                <span id="modal-duration"></span>
+              </div>
+              <div class="modal-stat">
+                <i class="ti ti-flame"></i>
+                <span id="modal-calories"></span>
+              </div>
+              <div class="modal-stat">
+                <i class="ti ti-activity"></i>
+                <span id="modal-exercises"></span>
+              </div>
+            </div>
+          </div>
+          <div class="workout-description">
+            <h4>Description</h4>
+            <p>
+              This workout is designed to improve your strength and endurance.
+              Follow the exercises in order and take short breaks between sets.
+            </p>
+          </div>
+          <div class="workout-exercises">
+            <h4>Exercises</h4>
+            <ul class="exercise-list">
+              <li class="exercise-item">
+                <span class="exercise-name">Exercise 1</span>
+                <span class="exercise-sets">3 sets x 12 reps</span>
+              </li>
+              <li class="exercise-item">
+                <span class="exercise-name">Exercise 2</span>
+                <span class="exercise-sets">4 sets x 10 reps</span>
+              </li>
+              <li class="exercise-item">
+                <span class="exercise-name">Exercise 3</span>
+                <span class="exercise-sets">3 sets x 15 reps</span>
+              </li>
+              <li class="exercise-item">
+                <span class="exercise-name">Exercise 4</span>
+                <span class="exercise-sets">3 sets x 12 reps</span>
+              </li>
+              <li class="exercise-item">
+                <span class="exercise-name">Exercise 5</span>
+                <span class="exercise-sets">3 sets x 20 reps</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn start-btn">Start Workout</button>
+          <button class="modal-btn schedule-btn">Schedule</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
