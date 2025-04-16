@@ -158,39 +158,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Save user data to the database
-  async function saveUserData(gender, age) {
-    if (!gender || !age) {
-      alert("Both gender and age are required!");
-      return;
-    }
+  // async function saveUserData(gender, age) {
+  //   if (!gender || !age) {
+  //     alert("Both gender and age are required!");
+  //     return;
+  //   }
 
-    try {
-      const response = await fetch('/api/save-user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          gender,
-          age
-        }),
-      });
+  //   try {
+  //     const response = await fetch('/api/save-user', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         gender,
+  //         age
+  //       }),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
       
-      if (response.ok) {
-        // Save user ID to localStorage for future use
-        localStorage.setItem('userId', data.userId);
-        console.log('User data saved successfully:', data);
-      } else {
-        console.error('Failed to save user data:', data.error);
-        alert('Failed to save user data. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error saving user data:', error);
-      alert('An error occurred while saving your data.');
-    }
-  }
+  //     if (response.ok) {
+  //       // Save user ID to localStorage for future use
+  //       localStorage.setItem('userId', data.userId);
+  //       console.log('User data saved successfully:', data);
+  //     } else {
+  //       console.error('Failed to save user data:', data.error);
+  //       alert('Failed to save user data. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error saving user data:', error);
+  //     alert('An error occurred while saving your data.');
+  //   }
+  // }
 
   // Snap to the closest age after scrolling stops
   function snapToClosestAge() {

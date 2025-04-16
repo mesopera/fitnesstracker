@@ -32,13 +32,30 @@ async function initDatabase() {
     
     // Create users table
     await connection.query(`
-      CREATE TABLE IF NOT EXISTS users (
+      CREATE TABLE IF NOT EXISTS userdata (
         id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        phone INT(20),
+        nickname VARCHAR(255),
         gender VARCHAR(10) NOT NULL,
         age INT NOT NULL,
         weight FLOAT,
         height FLOAT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS diet (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL,
+        food_name VARCHAR(255) NOT NULL,
+        preptime FLOAT,
+        calories FLOAT,
+        date DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES userdata(id)
       )
     `);
     

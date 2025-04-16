@@ -391,6 +391,7 @@
             if (navigator.vibrate) {
               navigator.vibrate(10);
             }
+            localStorage.setItem("userWeight", currentHeight);
           }
         }
 
@@ -508,11 +509,48 @@
           alert("Going back to previous screen");
         });
 
+        // async function saveParameters(height) {
+        //   if (!height) {
+        //     alert("Height is required!");
+        //     return;
+        //   }
+
+        //   const userId = localStorage.getItem('userId');
+        //   if (!userId) {
+        //     alert("User ID not found. Please start from the beginning.");
+        //     return;
+        //   }
+
+        //   try {
+        //     const response = await fetch('/api/update-height', {
+        //       method: 'POST',
+        //       headers: {
+        //         'Content-Type': 'application/json',
+        //       },
+        //       body: JSON.stringify({
+        //         userId,
+        //         height,
+        //       }),
+        //     });
+
+        //     const data = await response.json();
+
+        //     if (response.ok) {
+        //       console.log("Height updated successfully:", data);
+        //     } else {
+        //       console.error("Failed to update height:", data.error);
+        //       alert("Failed to update height. Please try again.");
+        //     }
+        //   } catch (error) {
+        //     console.error("Error updating height:", error);
+        //     alert("An error occurred while updating your height.");
+        //   }
+        // }
+
         // Continue button functionality
         const continueButton = document.querySelector(".continue-button");
         continueButton.addEventListener("click", function () {
           // In a real app, this would save the height and proceed
-          alert(`Weight saved: ${currentHeight} kg`);
         });
       });
     </script>

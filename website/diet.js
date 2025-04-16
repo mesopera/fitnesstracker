@@ -53,6 +53,54 @@ function handleModalClick(event) {
   }
 }
 
+async function saveUserData(user_id, food_name, preptime, calories, date) {
+  try {
+    // Make sure the date is in YYYY-MM-DD format
+    let formattedDate;
+    
+    if (date instanceof Date) {
+      formattedDate = date.toISOString().split('T')[0];
+    } else if (typeof date === 'string' && date.includes('T')) {
+      // If it's an ISO string like '2025-04-15T22:42:23.641Z'
+      formattedDate = date.split('T')[0];
+    } else {
+      // Assume it's already formatted correctly
+      formattedDate = date;
+    }
+    
+    const response = await fetch('/api/save-diet', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_id, 
+        food_name, 
+        preptime, 
+        calories, 
+        date: formattedDate
+      }),
+    });
+
+    const data = await response.json();
+    
+    if (response.ok) {
+      // Save user ID to localStorage for future use
+      localStorage.setItem('userId', data.userId);
+      console.log('User data saved successfully:', data);
+      return true;
+    } else {
+      console.error('Failed to save user data:', data.error);
+      alert('Failed to save user data. Please try again.');
+      return false;
+    }
+  } catch (error) {
+    console.error('Error saving user data:', error);
+    alert('An error occurred while saving your data.');
+    return false;
+  }
+}
+
 // Add new meal
 function addNewMeal(event) {
   event.preventDefault();
@@ -68,6 +116,15 @@ function addNewMeal(event) {
   // Create new meal card
   const newMealCard = document.createElement("article");
   newMealCard.className = "meal-card";
+
+  // Save user data
+  const userId = localStorage.getItem('userId');
+  // if (!userId) {
+  //   userId = 5;
+  // }
+  const today = new Date();
+  const dateOnly = today.toISOString().split('T')[0];
+  saveUserData(userId, title, time, calories, dateOnly);
 
   newMealCard.innerHTML = `
     <div class="meal-info">

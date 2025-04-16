@@ -510,11 +510,58 @@
           alert("Going back to previous screen");
         });
 
+        async function saveUserData(name, email, phone, nickname, gender, age, weight, height) {
+          if (!gender || !age) {
+            alert("Both gender and age are required!");
+            return;
+          }
+
+          try {
+            const response = await fetch('/api/save-user', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                name, 
+                email, 
+                phone, 
+                nickname,
+                gender,
+                age,
+                weight,
+                height
+              }),
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+              // Save user ID to localStorage for future use
+              localStorage.setItem('userId', data.userId);
+              console.log('User data saved successfully:', data);
+            } else {
+              console.error('Failed to save user data:', data.error);
+              alert('Failed to save user data. Please try again.');
+            }
+          } catch (error) {
+            console.error('Error saving user data:', error);
+            alert('An error occurred while saving your data.');
+          }
+        }
+
         // Continue button functionality
         const continueButton = document.querySelector(".continue-button");
         continueButton.addEventListener("click", function () {
-          // In a real app, this would save the height and proceed
-          alert(`Height saved: ${currentHeight} cm`);
+          localStorage.setItem("userHeight", currentHeight);
+          const name = localStorage.getItem("fullname");
+          const email = localStorage.getItem("email");
+          const phone = localStorage.getItem("phone");
+          const nickname = localStorage.getItem("nickname");
+          const selectedGender = localStorage.getItem("userGender");
+          const selectedAge = localStorage.getItem("userAge");
+          const selectedWeight = localStorage.getItem("userWeight");
+          saveUserData(name, email, phone, nickname, selectedGender, selectedAge, selectedWeight, currentHeight);
         });
       });
     </script>

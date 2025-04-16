@@ -3,50 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gender Selection</title>
+    <title>Fill Your Profile</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="gender-selection.css" />
+    <link rel="stylesheet" href="profile-form.css" />
   </head>
   <body>
-    <div class="gender-selection-container">
-      <header class="back-header">
-        <a href="profile-form.html" style="text-decoration: none;">
-        <button class="back-button">
-          <i class="ti ti-chevron-left"></i>
-          <span class="back-text">Back</span>
-        </button>
-        </a>
-      </header>
-
-      <main class="content-section">
-        <h1 class="page-title">What's Your Gender</h1>
-
-        <div class="gender-options">
-          <div class="gender-option">
-            <button class="gender-icon male-icon">♂</button>
-            <p class="gender-label">Male</p>
-          </div>
-
-          <div class="gender-option">
-            <button class="gender-icon female-icon">♀</button>
-            <p class="gender-label">Female</p>
-          </div>
+    <main class="profile-page">
+      <section class="profile-container">
+        <h1 class="page-title">Fill Your Profile</h1>
+        <div class="profile-picture-container">
+          <div class="profile-picture" id="profilePicture"></div>
+          <button
+            type="button"
+            class="attachment-button"
+            id="attachmentButton"
+            aria-label="Upload profile picture"
+          >
+            <i class="ti ti-paperclip"></i>
+          </button>
+          <input
+            type="file"
+            id="profileImageInput"
+            accept="image/*"
+            class="hidden-file-input"
+            aria-hidden="true"
+          />
         </div>
-
-        <div class="continue-button-container">
-          <a href="age-selector.html">
-            <button class="continue-button">Continue</button>
-          </a>
-        </div>
-      </main>
-    </div>
-    <script src="gender-selection.js"></script>
+        <form class="profile-form">
+          <div class="form-group">
+            <label for="fullname" class="form-label">Full name</label>
+            <input
+              type="text"
+              id="fullname"
+              value="Madison Smith"
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <label for="nickname" class="form-label">Nickname</label>
+            <input
+              type="text"
+              id="nickname"
+              value="Madison"
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              value="madisons@example.com"
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobile"
+              value="+123 567 89000"
+              class="form-input"
+            />
+          </div>
+          <button type="button" class="submit-button" id="submitButton"><a href="gender-selection.html">Submit</a></button>
+        </form>
+      </section>
+    </main>
+    <script src="profile-form.js"></script>
   </body>
 </html>
