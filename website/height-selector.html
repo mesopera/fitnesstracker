@@ -561,6 +561,8 @@
           const selectedGender = localStorage.getItem("userGender");
           const selectedAge = localStorage.getItem("userAge");
           const selectedWeight = localStorage.getItem("userWeight");
+          const bmi = selectedWeight / (currentHeight/100)**2;
+          localStorage.setItem("bmi", bmi);
           saveUserData(name, email, phone, nickname, selectedGender, selectedAge, selectedWeight, currentHeight);
         });
       });

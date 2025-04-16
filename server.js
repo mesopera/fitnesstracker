@@ -83,6 +83,28 @@ app.get('/api/diet/:userId', async (req, res) => {
   }
 });
 
+app.post('/api/save-workout', async (req, res) => {
+  try {
+    const { user_id, workout_title, workout_type, duration, calories, exercises, date } = req.body;
+    
+    // Insert workout data into database
+    const [result] = await pool.query(
+      'INSERT INTO workouts (user_id, workout_title, workout_type, duration, calories, exercises, date) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [user_id, workout_title, workout_type, duration, calories, exercises, date]
+    );
+    
+    return res.status(201).json({
+      success: true,
+      message: 'Workout data saved successfully',
+      workoutId: result.insertId,
+      userId: user_id
+    });
+  } catch (error) {
+    console.error('Error saving workout data:', error);
+    return res.status(500).json({ error: 'Failed to save workout data' });
+  }
+});
+
 // Initialize the application
 async function initApp() {
   // Test database connection

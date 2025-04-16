@@ -58,6 +58,21 @@ async function initDatabase() {
         FOREIGN KEY (user_id) REFERENCES userdata(id)
       )
     `);
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS workouts (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL,
+        workout_title VARCHAR(255) NOT NULL,
+        workout_type VARCHAR(100) NOT NULL,
+        duration FLOAT,
+        calories FLOAT,
+        exercises INT,
+        date DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES userdata(id)
+      )
+    `);
     
     console.log('Database initialized successfully');
     connection.release();

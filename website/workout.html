@@ -179,6 +179,9 @@
             </div>
           </article>
         </div>
+        
+        <!-- Add Workout Button -->
+        <button class="add-workout-btn">Add Workout +</button>
       </main>
 
       <footer class="app-footer">
@@ -251,6 +254,60 @@
           <button class="modal-btn start-btn">Start Workout</button>
           <button class="modal-btn schedule-btn">Schedule</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Add Workout Modal -->
+    <div class="modal" id="add-workout-modal">
+      <div class="modal-content">
+        <button class="modal-close" id="add-modal-close" aria-label="Close modal">
+          <i class="ti ti-x"></i>
+        </button>
+        <h2 class="modal-title">Add New Workout</h2>
+        <form id="add-workout-form">
+          <div class="form-group">
+            <label for="workout-title">Workout Title</label>
+            <input type="text" id="workout-title" required placeholder="Enter workout title">
+          </div>
+          
+          <div class="form-group">
+            <label for="workout-type">Workout Type</label>
+            <select id="workout-type" required>
+              <option value="">-- Select Type --</option>
+              <option value="cardio">Cardio</option>
+              <option value="hypertrophy">Hypertrophy</option>
+              <option value="strength">Strength</option>
+              <option value="flexibility">Flexibility</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="workout-duration">Duration (minutes)</label>
+            <input type="number" id="workout-duration" required min="1" placeholder="Enter duration">
+          </div>
+          
+          <div class="form-group">
+            <label for="workout-calories">Calories Burned</label>
+            <input type="number" id="workout-calories" required min="1" placeholder="Enter calories">
+          </div>
+          
+          <div class="form-group">
+            <label for="workout-exercises">Number of Exercises</label>
+            <input type="number" id="workout-exercises" required min="1" placeholder="Enter number of exercises">
+          </div>
+          
+          <div class="form-group">
+            <label for="workout-color">Color Theme</label>
+            <select id="workout-color" required>
+              <option value="purple">Purple</option>
+              <option value="blue">Blue</option>
+            </select>
+          </div>
+          
+          <div class="modal-actions">
+            <button type="submit" class="modal-btn start-btn">Add Workout</button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
